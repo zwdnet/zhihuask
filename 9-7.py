@@ -27,8 +27,7 @@ def run(N):
     r[0] = 0.500
     r3[0] = 8.000
 
-    delta = 0.05
-
+    delta = 0.00001
     for i in range(1, N*10):
         vx[i] = vx[i-1] + ax[i-1]*delta
         vy[i] = vy[i-1] + ay[i-1]*delta
@@ -40,15 +39,8 @@ def run(N):
         ay[i] = -1*y[i]*r3[i]
 
     plt.title("模拟次数%d" % int(N*10))
-    plt.plot(x,y,'o')
+    plt.plot(x,y)
     plt.show()
 
 if __name__ == "__main__":
-    run(10)
-    run(20)
-    run(50)
-    run(100)
-    run(200)
-    run(500)
-    run(1000)
-    run(2000)
+    run(300000)
